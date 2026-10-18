@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "pisa_min_shift_norm_sq": 1e-12,
+  "members": {
+    "dinov2": {
+      "encoder": {
+        "name": "dinov2_vits14",
+        "hub_ref": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+        "local_repo": null,
+        "checkpoint": null,
+        "allow_download": false,
+        "image_size": 224,
+        "extract_batch": 16,
+        "augmentation_seed": 101,
+        "preprocess": "equalize"
+      },
+      "loop": "protocol",
+      "transform": "pisa",
+      "training": {
+        "max_epochs": 100,
+        "min_epochs": 20,
+        "patience": 15,
+        "warmup": 5,
+        "lr": 0.001,
+        "ema_decay": 0.0,
+        "loss": "rps_ce"
+      }
+    },
+    "aimv2": {
+      "encoder": {
+        "name": "timm:aimv2_large_patch14_224.apple_pt",
+        "hub_ref": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+        "local_repo": null,
+        "checkpoint": null,
+        "allow_download": false,
+        "image_size": 224,
+        "extract_batch": 16,
+        "augmentation_seed": 101,
+        "preprocess": "equalize"
+      },
+      "loop": "protocol",
+      "transform": "pisa",
+      "training": {
+        "max_epochs": 100,
+        "min_epochs": 20,
+        "patience": 100,
+        "warmup": 5,
+        "lr": 0.0003,
+        "ema_decay": 0.99,
+        "loss": "mse"
+      }
+    },
+    "convnext": {
+      "encoder": {
+        "name": "convnext_tiny",
+        "hub_ref": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+        "local_repo": null,
+        "checkpoint": null,
+        "allow_download": false,
+        "image_size": 224,
+        "extract_batch": 16,
+        "augmentation_seed": 101,
+        "preprocess": "standard"
+      },
+      "loop": "constant",
+      "transform": "scta",
+      "training": {
+        "lr": 0.0003,
+        "max_epochs": 100
+      }
+    }
+  }
+}

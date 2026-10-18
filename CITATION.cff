@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this implementation, please cite the associated unpublished work and the relevant backbone and dataset sources listed in THIRD_PARTY.md."
+title: "Per-image shift adaptation for annotation-efficient facial action scoring across domains"
+authors:
+  - family-names: Wang
+    given-names: Wenji
+    orcid: "https://orcid.org/0009-0004-4144-3470"
+  - family-names: Yang
+    given-names: Yiming
+    orcid: "https://orcid.org/0009-0004-1621-3366"
+  - family-names: Zhang
+    given-names: Dehua
+    orcid: "https://orcid.org/0000-0001-8623-8439"
+year: 2026
+version: 0.1.0
+type: software
